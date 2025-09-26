@@ -7,83 +7,186 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"/>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
   <style>
-    body { margin: 0; padding: 0; display: flex; font-family: "Segoe UI", sans-serif; background: #0f172a; color: #e2e8f0; }
-    #map { flex: 1; height: 100vh; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+  }
 
-    /* Sidebar Glassy Theme */
-    #sidebar {
-      width: 320px;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      border-right: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
-    }
-    #sidebar h2 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #38bdf8;
-      text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
-    }
-    #sidebar input {
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      background: rgba(255, 255, 255, 0.05);
-      color: #f8fafc;
-      outline: none;
-    }
-    #sidebar input:focus {
-      border-color: #38bdf8;
-      box-shadow: 0 0 12px #38bdf8;
-    }
-    #reset-btn {
-      margin-top: 12px;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #0f172a;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
-      transition: all 0.3s ease;
-    }
-    #reset-btn:hover {
-      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
-      color: white;
-    }
-    #event-list {
-      flex: 1;
-      overflow-y: auto;
-      margin-top: 10px;
-    }
-    #event-list a {
-      display: block;
-      padding: 12px;
-      margin-bottom: 8px;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 10px;
-      color: #f1f5f9;
-      transition: all 0.3s ease;
-    }
-    #event-list a:hover {
-      background: rgba(56, 189, 248, 0.15);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-      transform: translateX(3px);
-    }
-  </style>
+  body {
+    display: flex;
+  }
+
+  #map {
+    flex: 1;
+    height: 100vh;
+  }
+
+  /* Sidebar Glassy Theme */
+  #sidebar {
+    width: 320px;
+    height: 100vh;
+    background: #103556;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-right: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+  }
+
+  #sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #38bdf8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+  }
+
+  #sidebar input {
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+    outline: none;
+  }
+
+  #sidebar input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px #38bdf8;
+  }
+
+  #sidebar input::placeholder {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+
+  #reset-btn {
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+    transition: all 0.3s ease;
+  }
+
+  #reset-btn:hover {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    color: white;
+  }
+
+  #event-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 5px;
+  }
+
+  #event-list a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    background: #28425c;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 10px;
+    color: #f1f5f9;
+    transition: all 0.3s ease;
+  }
+
+  #event-list a:hover {
+    background: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+    transform: translateX(3px);
+  }
+
+  /* Custom Scrollbar */
+  #event-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  #event-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  #event-list::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+  }
+  #event-list::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+  }
+
+  /* Popup Styling */
+  .mapboxgl-popup {
+    max-width: 340px !important;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .mapboxgl-popup-content {
+    background: #28425c !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+    padding: 16px 20px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .popup-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #38bdf8;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+    margin-bottom: 10px;
+  }
+
+  .popup-field {
+    margin-bottom: 6px;
+  }
+  .popup-field:last-child {
+    margin-bottom: 0;
+  }
+  .popup-field .label {
+    font-weight: bold;
+    color: #93c5fd;
+    margin-right: 4px;
+  }
+
+  .mapboxgl-popup-close-button {
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: bold;
+    right: 10px;
+    top: 6px;
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+    transition: all 0.2s ease;
+  }
+  .mapboxgl-popup-close-button:hover {
+    color: #38bdf8 !important;
+    transform: scale(1.2);
+  }
+
+  .mapboxgl-popup-tip {
+    border-top-color: #28425c !important;
+  }
+</style>
 </head>
 <body>
 
 <div id="sidebar">
-  <h2>🌍 Global AI Events</h2>
+  <h2></h2>
   <input id="filter" type="text" placeholder="Filter by event name..."/>
   <button id="reset-btn">Reset Globe</button>
   <div id="event-list"></div>
@@ -135,7 +238,9 @@ map.on("moveend", spinGlobe);
   map.on(ev, () => { userInteracting = false; spinGlobe(); });
 });
 
-const popup = new mapboxgl.Popup({ closeButton: true });
+// Prevent popup from auto-closing while moving
+const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, closeOnMove: false });
+
 let markers = [];
 let events = [];
 
@@ -146,6 +251,18 @@ fetch("https://raedaldweik.github.io/AIRadar/map.json")
     events = data.events;
     renderEvents(events);
   });
+
+// Popup HTML
+function getPopupHTML(e) {
+  return `
+    <div class="popup-wrapper">
+      <div class="popup-title">${e.event}</div>
+      <div class="popup-field"><span class="label">Location:</span> ${e.city}, ${e.country}</div>
+      <div class="popup-field"><span class="label">Date:</span> ${e.date}</div>
+      <div class="popup-field"><span class="label">Themes:</span> ${(e.themes || []).join(", ")}</div>
+    </div>
+  `;
+}
 
 // Render events
 function renderEvents(eventData) {
@@ -159,35 +276,41 @@ function renderEvents(eventData) {
     el.textContent = `${e.event} (${e.city}, ${e.country})`;
     el.href = "#";
     el.onclick = () => {
-      flyToEvent(e);
+      flyToEvent(e, true);
       return false;
     };
     list.appendChild(el);
 
     const marker = new mapboxgl.Marker({ color: "#38bdf8" })
       .setLngLat([e.lng, e.lat])
-      .setPopup(
-        new mapboxgl.Popup().setHTML(`
-          <b>${e.event}</b><br>
-          ${e.city}, ${e.country}<br>
-          ${e.date}<br>
-          <i>${e.themes.join(", ")}</i>
-        `)
-      )
       .addTo(map);
 
-    marker.getElement().addEventListener("click", () => flyToEvent(e));
+    marker.getElement().addEventListener("click", () => {
+      flyToEvent(e, true);
+    });
+
     markers.push(marker);
   });
 }
 
-function flyToEvent(e) {
+function flyToEvent(e, openPopup = false) {
   spinEnabled = false;
+
   map.easeTo({
     center: [e.lng, e.lat],
     zoom: 5,
     duration: 2000
   });
+
+  if (openPopup) {
+    map.once('moveend', () => {
+      popup.remove();
+      popup
+        .setLngLat([e.lng, e.lat])
+        .setHTML(getPopupHTML(e))
+        .addTo(map);
+    });
+  }
 }
 
 document.getElementById("reset-btn").addEventListener("click", () => {
@@ -200,7 +323,13 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 // Filter
 document.getElementById("filter").addEventListener("input", e => {
   const value = e.target.value.toLowerCase();
-  const filtered = events.filter(ev => ev.event.toLowerCase().includes(value));
+  const filtered = events.filter(ev => {
+    return (
+      ev.event.toLowerCase().includes(value) ||
+      ev.city.toLowerCase().includes(value) ||
+      ev.country.toLowerCase().includes(value)
+    );
+  });
   renderEvents(filtered);
 });
 
