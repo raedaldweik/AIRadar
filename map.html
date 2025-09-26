@@ -1,114 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>AI Radar Globe</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
-<style>
-  body { margin: 0; padding: 0; }
-  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-  #btn-spin {
-      font: bold 12px/20px 'Helvetica Neue', Arial, sans-serif;
-      background-color: #3386c0;
-      color: #fff;
-      position: absolute;
-      top: 20px; left: 50%;
-      z-index: 1; border: none;
-      width: 200px; margin-left: -100px;
-      display: block; cursor: pointer;
-      padding: 10px 20px; border-radius: 3px;
-  }
-  #btn-spin:hover { background-color: #4ea0da; }
-  .marker {
-      width: 14px; height: 14px; border-radius: 50%;
-      background: rgba(0,200,255,0.95);
-      border: 2px solid #fff;
-      box-shadow: 0 0 10px rgba(0,200,255,0.9), 0 0 20px rgba(0,200,255,0.6);
-  }
-  .mapboxgl-popup-content {
-      background: rgba(15,23,42,0.9);
-      color: #fff; border-radius: 10px; font-size: 13px;
-  }
-  .popup-button {
-      display:block; margin-top:8px; background:#0284c7; color:#fff;
-      border:none; border-radius:6px; padding:6px; cursor:pointer;
-      width:100%; text-align:center;
-  }
-  .popup-button:hover { background:#0369a1; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌍 Global AI Events Map</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet"/>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; display: flex; font-family: "Segoe UI", sans-serif; background: #0f172a; color: #e2e8f0; }
+    #map { flex: 1; height: 100vh; }
+
+    /* Sidebar Glassy Theme */
+    #sidebar {
+      width: 320px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-right: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+    }
+    #sidebar h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #38bdf8;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+    }
+    #sidebar input {
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+      color: #f8fafc;
+      outline: none;
+    }
+    #sidebar input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px #38bdf8;
+    }
+    #reset-btn {
+      margin-top: 12px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0f172a;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+      transition: all 0.3s ease;
+    }
+    #reset-btn:hover {
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+      color: white;
+    }
+    #event-list {
+      flex: 1;
+      overflow-y: auto;
+      margin-top: 10px;
+    }
+    #event-list a {
+      display: block;
+      padding: 12px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      color: #f1f5f9;
+      transition: all 0.3s ease;
+    }
+    #event-list a:hover {
+      background: rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+      transform: translateX(3px);
+    }
+  </style>
 </head>
 <body>
+
+<div id="sidebar">
+  <h2>🌍 Global AI Events</h2>
+  <input id="filter" type="text" placeholder="Filter by event name..."/>
+  <button id="reset-btn">Reset Globe</button>
+  <div id="event-list"></div>
+</div>
 <div id="map"></div>
-<button id="btn-spin">Pause rotation</button>
+
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicmFlZGR3ZWlrIiwiYSI6ImNtMTZqZGtpeTBta2cydnM4NjBkenhsMG8ifQ.r3ufHWJMoGh_DCH3XDhDAg';
+mapboxgl.accessToken = "pk.eyJ1IjoicmFlZGR3ZWlrIiwiYSI6ImNtMTZqZGtpeTBta2cydnM4NjBkenhsMG8ifQ.r3ufHWJMoGh_DCH3XDhDAg";
+
 const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/standard-satellite',
-    zoom: 1.5,
-    center: [-90, 40],
-    projection: 'globe'
+  container: "map",
+  style: "mapbox://styles/mapbox/standard-satellite",
+  zoom: 1.5,
+  center: [0, 20],
+  projection: "globe"
 });
-map.on('style.load', () => { map.setFog({}); });
 
-const secondsPerRevolution = 120, maxSpinZoom = 5, slowSpinZoom = 3;
-let userInteracting = false, spinEnabled = true;
+map.on("style.load", () => {
+  map.setFog({});
+});
+
+// rotation control
+let spinEnabled = true;
+let userInteracting = false;
+const secondsPerRevolution = 120;
+const maxSpinZoom = 5;
+const slowSpinZoom = 3;
+
 function spinGlobe() {
-    const zoom = map.getZoom();
-    if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
-        let distancePerSecond = 360 / secondsPerRevolution;
-        if (zoom > slowSpinZoom) {
-            const zoomDif = (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
-            distancePerSecond *= zoomDif;
-        }
-        const center = map.getCenter();
-        center.lng -= distancePerSecond;
-        map.easeTo({ center, duration: 1000, easing: (n) => n });
+  const zoom = map.getZoom();
+  if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
+    let distancePerSecond = 360 / secondsPerRevolution;
+    if (zoom > slowSpinZoom) {
+      const zoomDif = (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
+      distancePerSecond *= zoomDif;
     }
+    const center = map.getCenter();
+    center.lng -= distancePerSecond;
+    map.easeTo({ center, duration: 1000, easing: n => n });
+  }
 }
-map.on('mousedown', () => { userInteracting = true; });
-map.on('mouseup', () => { userInteracting = false; spinGlobe(); });
-map.on('dragend', () => { userInteracting = false; spinGlobe(); });
-map.on('pitchend', () => { userInteracting = false; spinGlobe(); });
-map.on('rotateend', () => { userInteracting = false; spinGlobe(); });
-map.on('moveend', () => { spinGlobe(); });
-document.getElementById('btn-spin').addEventListener('click', (e) => {
-    spinEnabled = !spinEnabled;
-    if (spinEnabled) { spinGlobe(); e.target.innerHTML = 'Pause rotation'; }
-    else { map.stop(); e.target.innerHTML = 'Start rotation'; }
-});
-spinGlobe();
+map.on("moveend", spinGlobe);
 
-// Load and plot events
+// pause spin on interaction
+["mousedown","dragstart","zoomstart","pitchstart","rotatestart"].forEach(ev => {
+  map.on(ev, () => { userInteracting = true; });
+});
+["mouseup","dragend","zoomend","pitchend","rotateend"].forEach(ev => {
+  map.on(ev, () => { userInteracting = false; spinGlobe(); });
+});
+
+const popup = new mapboxgl.Popup({ closeButton: true });
+let markers = [];
+let events = [];
+
+// Load events
 fetch("https://raedaldweik.github.io/AIRadar/map.json")
   .then(res => res.json())
-  .then(events => {
-    if (!Array.isArray(events)) events = events.events || [];
-    events.forEach(e => {
-      if (!e.lat || !e.lng) return;
-      const el = document.createElement('div');
-      el.className = 'marker';
-      new mapboxgl.Marker(el)
-        .setLngLat([e.lng, e.lat])
-        .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(`
-          <div>
-            <strong>${e.event}</strong><br/>
-            ${e.city}, ${e.country}<br/>
-            ${e.date}<br/>
-            <b>Themes:</b> ${(e.themes || []).join(", ")}<br/>
-            <button class="popup-button" onclick='summarizeEvent(${JSON.stringify(e)})'>Summarize with AI Assistant</button>
-          </div>
-        `))
-        .addTo(map);
-    });
+  .then(data => {
+    events = data.events;
+    renderEvents(events);
   });
 
-function summarizeEvent(eventDetails) {
-  console.log("Send to AI Assistant:", eventDetails);
-  // TODO: Hook this into AI assistant
+// Render events
+function renderEvents(eventData) {
+  markers.forEach(m => m.remove());
+  markers = [];
+  const list = document.getElementById("event-list");
+  list.innerHTML = "";
+
+  eventData.forEach(e => {
+    const el = document.createElement("a");
+    el.textContent = `${e.event} (${e.city}, ${e.country})`;
+    el.href = "#";
+    el.onclick = () => {
+      flyToEvent(e);
+      return false;
+    };
+    list.appendChild(el);
+
+    const marker = new mapboxgl.Marker({ color: "#38bdf8" })
+      .setLngLat([e.lng, e.lat])
+      .setPopup(
+        new mapboxgl.Popup().setHTML(`
+          <b>${e.event}</b><br>
+          ${e.city}, ${e.country}<br>
+          ${e.date}<br>
+          <i>${e.themes.join(", ")}</i>
+        `)
+      )
+      .addTo(map);
+
+    marker.getElement().addEventListener("click", () => flyToEvent(e));
+    markers.push(marker);
+  });
 }
+
+function flyToEvent(e) {
+  spinEnabled = false;
+  map.easeTo({
+    center: [e.lng, e.lat],
+    zoom: 5,
+    duration: 2000
+  });
+}
+
+document.getElementById("reset-btn").addEventListener("click", () => {
+  popup.remove();
+  spinEnabled = true;
+  map.easeTo({ center: [0, 20], zoom: 1.5, duration: 2000 });
+  setTimeout(() => { spinGlobe(); }, 2100);
+});
+
+// Filter
+document.getElementById("filter").addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  const filtered = events.filter(ev => ev.event.toLowerCase().includes(value));
+  renderEvents(filtered);
+});
+
+spinGlobe();
 </script>
+
 </body>
 </html>
