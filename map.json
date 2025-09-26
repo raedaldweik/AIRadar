@@ -1,0 +1,194 @@
+[
+  {
+    "event": "GITEX Global 2025",
+    "date": "2025-10-13",
+    "country": "UAE",
+    "city": "Dubai",
+    "themes": ["AI", "Cloud", "Mobility", "Cybersecurity"],
+    "url": "https://www.gitex.com/"
+  },
+  {
+    "event": "NeurIPS 2025",
+    "date": "2025-12-02",
+    "country": "USA",
+    "city": "San Diego",
+    "themes": ["AI Research", "Deep Learning", "ML"],
+    "url": "https://neurips.cc/Conferences/2025/Dates"
+  },
+  {
+    "event": "Web Summit 2025",
+    "date": "2025-11-10",
+    "country": "Portugal",
+    "city": "Lisbon",
+    "themes": ["Startups", "Tech Trends", "Investors"],
+    "url": "https://websummit.com/"
+  },
+  {
+    "event": "World Summit AI 2025 (Amsterdam)",
+    "date": "2025-10-08",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "themes": ["Applied AI", "Enterprise AI", "Ethics"],
+    "url": "https://worldsummit.ai/"
+  },
+  {
+    "event": "World AI Week 2025",
+    "date": "2025-10-06",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "themes": ["AI Ecosystem", "Business", "Science"],
+    "url": "https://worldaiweek.ai/"
+  },
+  {
+    "event": "ICML 2025",
+    "date": "2025-07-13",
+    "country": "Canada",
+    "city": "Vancouver",
+    "themes": ["Machine Learning", "Theory", "Systems"],
+    "url": "https://icml.cc/Conferences/2025/Dates"
+  },
+  {
+    "event": "CVPR 2025",
+    "date": "2025-06-11",
+    "country": "USA",
+    "city": "Nashville",
+    "themes": ["Computer Vision", "AI"],
+    "url": "https://cvpr.thecvf.com/Conferences/2025/Dates"
+  },
+  {
+    "event": "ICLR 2025 (virtual)",
+    "date": "2025-04-24",
+    "country": "—",
+    "city": "Online",
+    "themes": ["Representation Learning", "ML"],
+    "url": "https://iclr.cc/Conferences/2025/Dates"
+  },
+  {
+    "event": "KDD 2025",
+    "date": "2025-08-03",
+    "country": "Canada",
+    "city": "Toronto",
+    "themes": ["Data Mining", "AI", "Knowledge Discovery"],
+    "url": "https://kdd2025.kdd.org/"
+  },
+  {
+    "event": "ACL 2025",
+    "date": "2025-07-27",
+    "country": "Austria",
+    "city": "Vienna",
+    "themes": ["NLP", "Language AI"],
+    "url": "https://2025.aclweb.org/"
+  },
+  {
+    "event": "EMNLP 2025",
+    "date": "2025-11-05",
+    "country": "China",
+    "city": "Suzhou",
+    "themes": ["NLP", "Empirical Methods"],
+    "url": "https://2025.emnlp.org/"
+  },
+  {
+    "event": "NAACL 2025",
+    "date": "2025-04-29",
+    "country": "USA",
+    "city": "Albuquerque",
+    "themes": ["NLP", "Language AI"],
+    "url": "https://2025.naacl.org/"
+  },
+  {
+    "event": "AISTATS 2025",
+    "date": "2025-05-03",
+    "country": "Thailand",
+    "city": "Phuket (Mai Khao)",
+    "themes": ["Statistics & AI", "ML"],
+    "url": "https://aistats.org/aistats2025/"
+  },
+  {
+    "event": "AAAI-25",
+    "date": "2025-02-25",
+    "country": "USA",
+    "city": "Philadelphia",
+    "themes": ["AI Research", "Planning", "Reasoning"],
+    "url": "https://aaai.org/conference/aaai/aaai-25/"
+  },
+  {
+    "event": "IROS 2025",
+    "date": "2025-10-19",
+    "country": "China",
+    "city": "Hangzhou",
+    "themes": ["Robotics", "Intelligent Systems"],
+    "url": "https://www.iros25.org/"
+  },
+  {
+    "event": "ICRA 2025",
+    "date": "2025-05-19",
+    "country": "USA",
+    "city": "Atlanta",
+    "themes": ["Robotics", "Automation", "AI"],
+    "url": "https://events.infovaya.com/event?id=151"
+  },
+  {
+    "event": "World AI Cannes Festival (WAICF) 2025",
+    "date": "2025-02-13",
+    "country": "France",
+    "city": "Cannes",
+    "themes": ["Business AI", "Society", "GenAI"],
+    "url": "https://www.worldaicannes.com/"
+  },
+  {
+    "event": "The AI Summit London 2025",
+    "date": "2025-06-11",
+    "country": "UK",
+    "city": "London",
+    "themes": ["Enterprise AI", "Applied AI"],
+    "url": "https://londontechweek.com/ai-summit"
+  },
+  {
+    "event": "The AI Summit New York 2025",
+    "date": "2025-12-10",
+    "country": "USA",
+    "city": "New York",
+    "themes": ["Enterprise AI", "Strategy"],
+    "url": "https://newyork.theaisummit.com/"
+  },
+  {
+    "event": "World Summit AI Americas 2025",
+    "date": "2025-04-15",
+    "country": "Canada",
+    "city": "Montréal",
+    "themes": ["AI Ecosystem", "Industry"],
+    "url": "https://americas.worldsummit.ai/"
+  },
+  {
+    "event": "World Summit AI USA 2025",
+    "date": "2025-06-18",
+    "country": "USA",
+    "city": "San Francisco",
+    "themes": ["AI Industry", "Policy", "Startups"],
+    "url": "https://usa.worldsummit.ai/"
+  },
+  {
+    "event": "AI & Big Data Expo Europe 2025",
+    "date": "2025-09-24",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "themes": ["Enterprise AI", "Data", "Security"],
+    "url": "https://www.ai-expo.net/europe/"
+  },
+  {
+    "event": "Future of AI (FT Live) 2025",
+    "date": "2025-11-05",
+    "country": "UK",
+    "city": "London",
+    "themes": ["AI Strategy", "Governance"],
+    "url": "https://ai.live.ft.com/"
+  },
+  {
+    "event": "TEDAI San Francisco 2025",
+    "date": "2025-10-21",
+    "country": "USA",
+    "city": "San Francisco",
+    "themes": ["AI Impact", "Society", "Innovation"],
+    "url": "https://tedai-sanfrancisco.ted.com/"
+  }
+]
