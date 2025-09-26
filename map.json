@@ -244,15 +244,6 @@
       "lng": 14.4378
     },
     {
-      "event": "AI Expo Middle East",
-      "date": "2025-09-18",
-      "city": "Dubai",
-      "country": "UAE",
-      "themes": ["AI", "Enterprise", "Startups"],
-      "lat": 25.276987,
-      "lng": 55.296249
-    },
-    {
       "event": "ICANN AI Conference",
       "date": "2025-04-14",
       "city": "San Francisco",
