@@ -17,9 +17,7 @@
     color: #e2e8f0;
   }
 
-  body {
-    display: flex;
-  }
+  body { display: flex; }
 
   #map {
     flex: 1;
@@ -40,13 +38,6 @@
     box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
   }
 
-  #sidebar h2 {
-    margin-top: 0;
-    font-size: 20px;
-    color: #38bdf8;
-    text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
-  }
-
   #sidebar input {
     padding: 10px;
     margin-bottom: 12px;
@@ -55,6 +46,7 @@
     background: rgba(255, 255, 255, 0.05);
     color: #f8fafc;
     outline: none;
+    width: 100%;
   }
 
   #sidebar input:focus {
@@ -67,6 +59,71 @@
     opacity: 0.8;
   }
 
+  /* Past/Future toggle buttons */
+  #time-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+  #time-filters button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(40, 66, 92, 0.8);
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  #time-filters button.active {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #0f172a;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+  }
+
+  /* Month Navigation (subtle glow) */
+  #month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(40, 66, 92, 0.6);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+  }
+  #month-nav span {
+    font-weight: bold;
+    color: #38bdf8;
+    text-shadow: 0 0 4px rgba(56, 189, 248, 0.6);
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer; /* clickable to reset to All Months */
+  }
+  #month-nav span:hover {
+    text-decoration: underline;
+  }
+  #month-nav button {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    border: none;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+  }
+  #month-nav button:hover {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Reset Button */
   #reset-btn {
     margin-top: 12px;
     padding: 12px;
@@ -79,7 +136,6 @@
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
     transition: all 0.3s ease;
   }
-
   #reset-btn:hover {
     background: linear-gradient(135deg, #0ea5e9, #38bdf8);
     color: white;
@@ -91,7 +147,6 @@
     margin-top: 10px;
     padding-right: 5px;
   }
-
   #event-list a {
     display: block;
     padding: 12px;
@@ -103,7 +158,6 @@
     color: #f1f5f9;
     transition: all 0.3s ease;
   }
-
   #event-list a:hover {
     background: rgba(56, 189, 248, 0.25);
     box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
@@ -111,9 +165,7 @@
   }
 
   /* Custom Scrollbar */
-  #event-list::-webkit-scrollbar {
-    width: 8px;
-  }
+  #event-list::-webkit-scrollbar { width: 8px; }
   #event-list::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -123,16 +175,10 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
   }
-  #event-list::-webkit-scrollbar-thumb:hover {
-    background: #0ea5e9;
-  }
+  #event-list::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
 
   /* Popup Styling */
-  .mapboxgl-popup {
-    max-width: 340px !important;
-    font-family: "Segoe UI", sans-serif;
-  }
-
+  .mapboxgl-popup { max-width: 340px !important; font-family: "Segoe UI", sans-serif; }
   .mapboxgl-popup-content {
     background: #28425c !important;
     color: #ffffff !important;
@@ -143,7 +189,6 @@
     font-size: 15px;
     line-height: 1.5;
   }
-
   .popup-title {
     font-size: 18px;
     font-weight: bold;
@@ -151,44 +196,37 @@
     text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
     margin-bottom: 10px;
   }
-
-  .popup-field {
-    margin-bottom: 6px;
-  }
-  .popup-field:last-child {
-    margin-bottom: 0;
-  }
-  .popup-field .label {
-    font-weight: bold;
-    color: #93c5fd;
-    margin-right: 4px;
-  }
-
+  .popup-field { margin-bottom: 6px; }
+  .popup-field:last-child { margin-bottom: 0; }
+  .popup-field .label { font-weight: bold; color: #93c5fd; margin-right: 4px; }
   .mapboxgl-popup-close-button {
-    color: #fff !important;
-    font-size: 20px;
-    font-weight: bold;
-    right: 10px;
-    top: 6px;
-    text-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
-    transition: all 0.2s ease;
+    color: #fff !important; font-size: 20px; font-weight: bold; right: 10px; top: 6px;
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.7); transition: all 0.2s ease;
   }
-  .mapboxgl-popup-close-button:hover {
-    color: #38bdf8 !important;
-    transform: scale(1.2);
-  }
-
-  .mapboxgl-popup-tip {
-    border-top-color: #28425c !important;
-  }
+  .mapboxgl-popup-close-button:hover { color: #38bdf8 !important; transform: scale(1.2); }
+  .mapboxgl-popup-tip { border-top-color: #28425c !important; }
 </style>
 </head>
 <body>
 
 <div id="sidebar">
-  <h2></h2>
-  <input id="filter" type="text" placeholder="Filter by event name..."/>
-  <button id="reset-btn">Reset Globe</button>
+  <!-- Removed the 'Filters' title as requested -->
+  <input id="filter" type="text" placeholder="Filter by name/city/country..."/>
+
+  <!-- Past/Future toggles -->
+  <div id="time-filters">
+    <button id="past-btn">Past</button>
+    <button id="future-btn">Future</button>
+  </div>
+
+  <!-- Month Navigation -->
+  <div id="month-nav">
+    <button id="prev-month">◀</button>
+    <span id="current-month" title="Click to show All Months">All Months</span>
+    <button id="next-month">▶</button>
+  </div>
+
+  <button id="reset-btn">Reset Filters</button>
   <div id="event-list"></div>
 </div>
 <div id="map"></div>
@@ -204,9 +242,7 @@ const map = new mapboxgl.Map({
   projection: "globe"
 });
 
-map.on("style.load", () => {
-  map.setFog({});
-});
+map.on("style.load", () => { map.setFog({}); });
 
 // rotation control
 let spinEnabled = true;
@@ -238,18 +274,31 @@ map.on("moveend", spinGlobe);
   map.on(ev, () => { userInteracting = false; spinGlobe(); });
 });
 
-// Prevent popup from auto-closing while moving
+// Popup with guard against programmatic close triggering reset
 const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, closeOnMove: false });
+let suppressPopupCloseReset = false;
+popup.on("close", () => {
+  if (!suppressPopupCloseReset) resetGlobe(); // only reset on user close
+});
 
 let markers = [];
 let events = [];
+const cutoffDate = new Date("2025-10-01");
+
+const monthNames = [
+  "January","February","March","April","May","June",
+  "July","August","September","October","November","December"
+];
+
+let currentMonthIndex = null; // null = all months
+let activeTimeFilter = null;  // "past" | "future" | null
 
 // Load events
 fetch("https://raedaldweik.github.io/AIRadar/map.json")
   .then(res => res.json())
   .then(data => {
     events = data.events;
-    renderEvents(events);
+    applyFilters();
   });
 
 // Popup HTML
@@ -260,6 +309,17 @@ function getPopupHTML(e) {
       <div class="popup-field"><span class="label">Location:</span> ${e.city}, ${e.country}</div>
       <div class="popup-field"><span class="label">Date:</span> ${e.date}</div>
       <div class="popup-field"><span class="label">Themes:</span> ${(e.themes || []).join(", ")}</div>
+      ${e.Link ? `
+        <div style="margin-top:12px; text-align:center;">
+          <a href="${e.Link}" target="_blank" 
+             style="display:inline-block; padding:10px 18px; border-radius:8px;
+                    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+                    color:#0f172a; font-weight:bold; text-decoration:none;
+                    box-shadow:0 0 12px rgba(56,189,248,0.7);
+                    transition:all 0.3s ease;">
+             Visit Site
+          </a>
+        </div>` : ""}
     </div>
   `;
 }
@@ -275,12 +335,10 @@ function renderEvents(eventData) {
     const el = document.createElement("a");
     el.textContent = `${e.event} (${e.city}, ${e.country})`;
     el.href = "#";
-    el.onclick = () => {
-      flyToEvent(e, true);
-      return false;
-    };
+    el.onclick = () => { flyToEvent(e, true); return false; };
     list.appendChild(el);
 
+    // All markers blue (no past/future color coding)
     const marker = new mapboxgl.Marker({ color: "#38bdf8" })
       .setLngLat([e.lng, e.lat])
       .addTo(map);
@@ -304,7 +362,11 @@ function flyToEvent(e, openPopup = false) {
 
   if (openPopup) {
     map.once('moveend', () => {
-      popup.remove();
+      // Prevent our programmatic 'remove' from triggering globe reset
+      suppressPopupCloseReset = true;
+      popup.remove();               // may fire 'close' synchronously
+      suppressPopupCloseReset = false;
+
       popup
         .setLngLat([e.lng, e.lat])
         .setHTML(getPopupHTML(e))
@@ -313,24 +375,121 @@ function flyToEvent(e, openPopup = false) {
   }
 }
 
-document.getElementById("reset-btn").addEventListener("click", () => {
-  popup.remove();
+function resetGlobe() {
   spinEnabled = true;
   map.easeTo({ center: [0, 20], zoom: 1.5, duration: 2000 });
   setTimeout(() => { spinGlobe(); }, 2100);
+}
+
+// Reset Filters button
+document.getElementById("reset-btn").addEventListener("click", () => {
+  document.getElementById("filter").value = "";
+  currentMonthIndex = null;
+  activeTimeFilter = null;
+  document.getElementById("current-month").textContent = "All Months";
+  document.getElementById("past-btn").classList.remove("active");
+  document.getElementById("future-btn").classList.remove("active");
+
+  // Programmatic popup close shouldn't auto-reset (we will reset manually)
+  suppressPopupCloseReset = true;
+  popup.remove();
+  suppressPopupCloseReset = false;
+
+  applyFilters();
+  resetGlobe();
 });
 
-// Filter
-document.getElementById("filter").addEventListener("input", e => {
-  const value = e.target.value.toLowerCase();
+// Apply Filters
+function applyFilters() {
+  const search = document.getElementById("filter").value.toLowerCase();
+
   const filtered = events.filter(ev => {
-    return (
-      ev.event.toLowerCase().includes(value) ||
-      ev.city.toLowerCase().includes(value) ||
-      ev.country.toLowerCase().includes(value)
-    );
+    const matchesText =
+      ev.event.toLowerCase().includes(search) ||
+      ev.city.toLowerCase().includes(search) ||
+      ev.country.toLowerCase().includes(search);
+
+    let matchesMonth = true;
+    if (currentMonthIndex !== null) {
+      const evMonth = new Date(ev.date).getMonth();
+      matchesMonth = evMonth === currentMonthIndex;
+    }
+
+    let matchesTime = true;
+    if (activeTimeFilter === "past") {
+      matchesTime = new Date(ev.date) < cutoffDate;
+    } else if (activeTimeFilter === "future") {
+      matchesTime = new Date(ev.date) >= cutoffDate;
+    }
+
+    return matchesText && matchesMonth && matchesTime;
   });
+
   renderEvents(filtered);
+}
+
+document.getElementById("filter").addEventListener("input", applyFilters);
+
+// Month navigation & label reset
+function updateMonthDisplay() {
+  const monthLabel = document.getElementById("current-month");
+  monthLabel.textContent = currentMonthIndex === null ? "All Months" : monthNames[currentMonthIndex];
+  applyFilters();
+}
+
+document.getElementById("prev-month").addEventListener("click", () => {
+  if (currentMonthIndex === null) {
+    // from All → go to September when clicking left (optional behavior)
+    currentMonthIndex = 8; // September
+  } else {
+    currentMonthIndex = (currentMonthIndex + 11) % 12;
+  }
+  updateMonthDisplay();
+});
+
+document.getElementById("next-month").addEventListener("click", () => {
+  if (currentMonthIndex === null) {
+    // from All → first right click should be October (per request)
+    currentMonthIndex = 9; // October
+  } else {
+    currentMonthIndex = (currentMonthIndex + 1) % 12;
+  }
+  updateMonthDisplay();
+});
+
+// Clickable month label → reset to All Months
+document.getElementById("current-month").addEventListener("click", () => {
+  currentMonthIndex = null;
+  updateMonthDisplay();
+});
+
+// Past/Future toggle buttons
+document.getElementById("past-btn").addEventListener("click", () => {
+  const btn = document.getElementById("past-btn");
+  const other = document.getElementById("future-btn");
+  if (activeTimeFilter === "past") {
+    activeTimeFilter = null;
+    btn.classList.remove("active");
+  } else {
+    activeTimeFilter = "past";
+    btn.classList.add("active");
+    other.classList.remove("active");
+  }
+  applyFilters();
+});
+
+document.getElementById("future-btn").addEventListener("click", () => {
+  const btn = document.getElementById("future-btn");
+  const other = document.getElementById("past-btn");
+  if (activeTimeFilter === "future") {
+    activeTimeFilter = null;
+    btn.classList.remove("active");
+  } else {
+    activeTimeFilter = "future";
+    btn.classList.add("active");
+    other.classList.remove("active");
+  }
+  applyFilters();
 });
 
 spinGlobe();
