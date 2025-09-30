@@ -5,90 +5,60 @@
       "date": "2025-10-13",
       "city": "Dubai",
       "country": "UAE",
-      "themes": ["AI", "Technology"],
-      "lat": 25.276987,
-      "lng": 55.296249
+      "themes": ["AI", "Technology", "Cloud", "Cyber"],
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "Link": "https://www.gitex.com/"
     },
     {
-      "event": "World AI Cannes Festival",
+      "event": "World AI Cannes Festival (WAICF) 2025",
       "date": "2025-02-13",
       "city": "Cannes",
       "country": "France",
       "themes": ["AI", "Ethics", "Business"],
-      "lat": 43.552847,
-      "lng": 7.017369
+      "lat": 43.5528,
+      "lng": 7.0174,
+      "Link": "https://worldaicanes.com/"
     },
     {
-      "event": "AI Expo Africa",
-      "date": "2025-09-10",
-      "city": "Cape Town",
+      "event": "AI Expo Africa (AIIM) 2025",
+      "date": "2025-10-29",
+      "city": "Johannesburg",
       "country": "South Africa",
       "themes": ["AI", "Innovation", "Startups"],
-      "lat": -33.924869,
-      "lng": 18.424055
-    },
-    {
-      "event": "NeurIPS 2025",
-      "date": "2025-12-01",
-      "city": "New Orleans",
-      "country": "USA",
-      "themes": ["AI Research", "Machine Learning"],
-      "lat": 29.951065,
-      "lng": -90.071533
-    },
-    {
-      "event": "AI Summit London",
-      "date": "2025-06-11",
-      "city": "London",
-      "country": "UK",
-      "themes": ["AI", "Enterprise", "Cloud"],
-      "lat": 51.507222,
-      "lng": -0.1275
+      "lat": -26.2041,
+      "lng": 28.0473,
+      "Link": "https://aiexpoafrica.com/"
     },
     {
       "event": "CVPR 2025",
-      "date": "2025-06-15",
+      "date": "2025-06-11",
       "city": "Nashville",
       "country": "USA",
       "themes": ["Computer Vision", "AI Research"],
-      "lat": 36.162663,
-      "lng": -86.781601
+      "lat": 36.1627,
+      "lng": -86.7816,
+      "Link": "https://cvpr.thecvf.com/Conferences/2025"
     },
     {
-      "event": "AI Expo Korea",
-      "date": "2025-07-02",
-      "city": "Seoul",
-      "country": "South Korea",
-      "themes": ["AI", "Robotics", "Automation"],
-      "lat": 37.566535,
-      "lng": 126.977969
-    },
-    {
-      "event": "Web Summit",
-      "date": "2025-11-03",
-      "city": "Lisbon",
-      "country": "Portugal",
-      "themes": ["AI", "Startups", "Tech"],
-      "lat": 38.716892,
-      "lng": -9.139042
-    },
-    {
-      "event": "AI Expo Tokyo",
-      "date": "2025-05-14",
-      "city": "Tokyo",
-      "country": "Japan",
-      "themes": ["AI", "Enterprise", "Robotics"],
-      "lat": 35.6895,
-      "lng": 139.6917
-    },
-    {
-      "event": "KDD 2025",
-      "date": "2025-08-17",
-      "city": "Toronto",
+      "event": "ICML 2025",
+      "date": "2025-07-13",
+      "city": "Vancouver",
       "country": "Canada",
-      "themes": ["Data Science", "AI Research"],
-      "lat": 43.6532,
-      "lng": -79.3832
+      "themes": ["Machine Learning", "AI Research"],
+      "lat": 49.2827,
+      "lng": -123.1207,
+      "Link": "https://icml.cc/Conferences/2025"
+    },
+    {
+      "event": "ICLR 2025",
+      "date": "2025-04-24",
+      "city": "Singapore",
+      "country": "Singapore",
+      "themes": ["AI Research", "Deep Learning"],
+      "lat": 1.3521,
+      "lng": 103.8198,
+      "Link": "https://iclr.cc/Conferences/2025"
     },
     {
       "event": "AAAI 2025",
@@ -96,143 +66,259 @@
       "city": "Philadelphia",
       "country": "USA",
       "themes": ["AI Research", "NLP"],
-      "lat": 39.952583,
-      "lng": -75.165222
+      "lat": 39.9526,
+      "lng": -75.1652,
+      "Link": "https://aaai.org/conference/aaai-25/"
     },
     {
-      "event": "ICLR 2025",
-      "date": "2025-05-05",
-      "city": "Singapore",
-      "country": "Singapore",
-      "themes": ["AI Research", "Deep Learning"],
-      "lat": 1.352083,
-      "lng": 103.819836
+      "event": "KDD 2025",
+      "date": "2025-08-03",
+      "city": "Toronto",
+      "country": "Canada",
+      "themes": ["Data Science", "AI Research"],
+      "lat": 43.6532,
+      "lng": -79.3832,
+      "Link": "https://kdd.org/kdd2025/"
     },
     {
-      "event": "CogX Festival",
-      "date": "2025-09-15",
-      "city": "London",
-      "country": "UK",
-      "themes": ["AI", "Innovation", "Policy"],
-      "lat": 51.507222,
-      "lng": -0.1275
-    },
-    {
-      "event": "World Summit AI",
+      "event": "World Summit AI Amsterdam 2025",
       "date": "2025-10-08",
       "city": "Amsterdam",
       "country": "Netherlands",
       "themes": ["AI", "Enterprise", "Ethics"],
       "lat": 52.3676,
-      "lng": 4.9041
+      "lng": 4.9041,
+      "Link": "https://worldsummit.ai/"
     },
     {
-      "event": "Big Data & AI Toronto",
-      "date": "2025-06-11",
-      "city": "Toronto",
+      "event": "World Summit AI Americas (Canada) 2025",
+      "date": "2025-04-15",
+      "city": "Montréal",
       "country": "Canada",
-      "themes": ["AI", "Big Data", "Analytics"],
-      "lat": 43.6532,
-      "lng": -79.3832
+      "themes": ["AI", "Enterprise", "Policy"],
+      "lat": 45.5019,
+      "lng": -73.5674,
+      "Link": "https://americas.worldsummit.ai/"
     },
     {
-      "event": "AI & Big Data Expo Europe",
+      "event": "AI for Good Global Summit 2025",
+      "date": "2025-07-08",
+      "city": "Geneva",
+      "country": "Switzerland",
+      "themes": ["AI", "Sustainability", "Policy"],
+      "lat": 46.2044,
+      "lng": 6.1432,
+      "Link": "https://aiforgood.itu.int/summit25/"
+    },
+    {
+      "event": "AI Infra Summit (formerly AI Hardware & Edge AI Summit) 2025",
+      "date": "2025-09-09",
+      "city": "Santa Clara",
+      "country": "USA",
+      "themes": ["AI", "Hardware", "Chips", "Data Center"],
+      "lat": 37.3541,
+      "lng": -121.9552,
+      "Link": "https://ai-infra-summit.com/events/ai-infra-summit"
+    },
+    {
+      "event": "SIGGRAPH 2025",
+      "date": "2025-08-10",
+      "city": "Vancouver",
+      "country": "Canada",
+      "themes": ["Graphics", "AI", "XR"],
+      "lat": 49.2827,
+      "lng": -123.1207,
+      "Link": "https://s2025.siggraph.org/"
+    },
+    {
+      "event": "Google Cloud Next ’25",
+      "date": "2025-04-09",
+      "city": "Las Vegas",
+      "country": "USA",
+      "themes": ["Cloud", "AI", "Data"],
+      "lat": 36.1699,
+      "lng": -115.1398,
+      "Link": "https://cloud.withgoogle.com/next"
+    },
+    {
+      "event": "Microsoft Build 2025",
+      "date": "2025-05-19",
+      "city": "Seattle",
+      "country": "USA",
+      "themes": ["Developers", "AI", "Cloud"],
+      "lat": 47.6062,
+      "lng": -122.3321,
+      "Link": "https://build.microsoft.com/"
+    },
+    {
+      "event": "Apple WWDC25",
+      "date": "2025-06-09",
+      "city": "Cupertino",
+      "country": "USA",
+      "themes": ["Developers", "AI", "Platforms"],
+      "lat": 37.3229,
+      "lng": -122.0322,
+      "Link": "https://developer.apple.com/wwdc25/"
+    },
+    {
+      "event": "Web Summit Lisbon 2025",
+      "date": "2025-11-10",
+      "city": "Lisbon",
+      "country": "Portugal",
+      "themes": ["AI", "Startups", "Tech"],
+      "lat": 38.7169,
+      "lng": -9.1390,
+      "Link": "https://websummit.com/"
+    },
+    {
+      "event": "Mobile World Congress (MWC) Barcelona 2025",
+      "date": "2025-03-03",
+      "city": "Barcelona",
+      "country": "Spain",
+      "themes": ["Mobile", "AI", "5G"],
+      "lat": 41.3851,
+      "lng": 2.1734,
+      "Link": "https://www.mwcbarcelona.com/"
+    },
+    {
+      "event": "SXSW 2025 – AI Track",
+      "date": "2025-03-09",
+      "city": "Austin",
+      "country": "USA",
+      "themes": ["AI", "Startups", "Media"],
+      "lat": 30.2672,
+      "lng": -97.7431,
+      "Link": "https://schedule.sxsw.com/2025"
+    },
+    {
+      "event": "RSA Conference 2025",
+      "date": "2025-04-28",
+      "city": "San Francisco",
+      "country": "USA",
+      "themes": ["Cybersecurity", "AI"],
+      "lat": 37.7749,
+      "lng": -122.4194,
+      "Link": "https://www.rsaconference.com/usa"
+    },
+    {
+      "event": "Black Hat USA 2025",
+      "date": "2025-08-02",
+      "city": "Las Vegas",
+      "country": "USA",
+      "themes": ["Cybersecurity", "AI"],
+      "lat": 36.1699,
+      "lng": -115.1398,
+      "Link": "https://www.blackhat.com/us-25/"
+    },
+    {
+      "event": "DEF CON 33",
+      "date": "2025-08-07",
+      "city": "Las Vegas",
+      "country": "USA",
+      "themes": ["Security", "Hacking", "AI"],
+      "lat": 36.1699,
+      "lng": -115.1398,
+      "Link": "https://defcon.org/"
+    },
+    {
+      "event": "Google I/O 2025",
+      "date": "2025-05-20",
+      "city": "Mountain View",
+      "country": "USA",
+      "themes": ["Developers", "AI"],
+      "lat": 37.3861,
+      "lng": -122.0839,
+      "Link": "https://io.google/"
+    },
+    {
+      "event": "ACL 2025",
+      "date": "2025-07-27",
+      "city": "Vienna",
+      "country": "Austria",
+      "themes": ["NLP", "AI Research"],
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "Link": "https://2025.aclweb.org/"
+    },
+    {
+      "event": "INTERSPEECH 2025",
+      "date": "2025-08-17",
+      "city": "Rotterdam",
+      "country": "Netherlands",
+      "themes": ["Speech", "AI"],
+      "lat": 51.9244,
+      "lng": 4.4777,
+      "Link": "https://www.interspeech2025.org/"
+    },
+    {
+      "event": "ICASSP 2025",
+      "date": "2025-04-06",
+      "city": "Hyderabad",
+      "country": "India",
+      "themes": ["Signal Processing", "AI"],
+      "lat": 17.3850,
+      "lng": 78.4867,
+      "Link": "https://2025.ieeeicassp.org/"
+    },
+    {
+      "event": "The AI Summit London 2025",
+      "date": "2025-06-11",
+      "city": "London",
+      "country": "UK",
+      "themes": ["AI", "Enterprise", "Cloud"],
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "Link": "https://london.theaisummit.com/"
+    },
+    {
+      "event": "AI & Big Data Expo North America 2025",
+      "date": "2025-06-04",
+      "city": "Santa Clara",
+      "country": "USA",
+      "themes": ["AI", "Big Data", "IoT"],
+      "lat": 37.3541,
+      "lng": -121.9552,
+      "Link": "https://www.ai-expo.net/northamerica/"
+    },
+    {
+      "event": "AI & Big Data Expo Europe 2025",
       "date": "2025-09-24",
       "city": "Amsterdam",
       "country": "Netherlands",
       "themes": ["AI", "Big Data", "IoT"],
       "lat": 52.3676,
-      "lng": 4.9041
+      "lng": 4.9041,
+      "Link": "https://www.ai-expo.net/europe/"
     },
     {
-      "event": "ICML 2025",
-      "date": "2025-07-20",
-      "city": "Vienna",
-      "country": "Austria",
-      "themes": ["Machine Learning", "AI Research"],
-      "lat": 48.210033,
-      "lng": 16.373819
-    },
-    {
-      "event": "SXSW 2025 - AI Track",
-      "date": "2025-03-10",
-      "city": "Austin",
+      "event": "NVIDIA GTC 2025",
+      "date": "2025-03-17",
+      "city": "San Jose",
       "country": "USA",
-      "themes": ["AI", "Startups", "Media"],
-      "lat": 30.2672,
-      "lng": -97.7431
+      "themes": ["AI", "Accelerated Computing", "Robotics"],
+      "lat": 37.3382,
+      "lng": -121.8863,
+      "Link": "https://www.nvidia.com/gtc/"
     },
     {
-      "event": "AI Expo North America",
-      "date": "2025-06-04",
-      "city": "Santa Clara",
+      "event": "NeurIPS 2025",
+      "date": "2025-12-02",
+      "city": "San Diego",
       "country": "USA",
-      "themes": ["AI", "Enterprise", "Robotics"],
-      "lat": 37.3541,
-      "lng": -121.9552
+      "themes": ["AI Research", "Machine Learning"],
+      "lat": 32.7157,
+      "lng": -117.1611,
+      "Link": "https://neurips.cc/"
     },
     {
-      "event": "Global AI Bootcamp",
-      "date": "2025-12-06",
-      "city": "Multiple",
-      "country": "Global",
-      "themes": ["AI", "Community", "Learning"],
-      "lat": 51.507222,
-      "lng": -0.1275
-    },
-    {
-      "event": "AI Expo India",
-      "date": "2025-08-06",
-      "city": "New Delhi",
-      "country": "India",
-      "themes": ["AI", "Innovation", "Enterprise"],
-      "lat": 28.6139,
-      "lng": 77.209
-    },
-    {
-      "event": "ICDM 2025",
-      "date": "2025-11-23",
-      "city": "Rio de Janeiro",
-      "country": "Brazil",
-      "themes": ["Data Mining", "AI Research"],
-      "lat": -22.9068,
-      "lng": -43.1729
-    },
-    {
-      "event": "AI Hardware Summit",
-      "date": "2025-09-09",
-      "city": "Mountain View",
-      "country": "USA",
-      "themes": ["AI", "Hardware", "Chips"],
-      "lat": 37.3861,
-      "lng": -122.0839
-    },
-    {
-      "event": "AI for Good Global Summit",
-      "date": "2025-05-28",
-      "city": "Geneva",
-      "country": "Switzerland",
-      "themes": ["AI", "Sustainability", "Policy"],
-      "lat": 46.2044,
-      "lng": 6.1432
-    },
-    {
-      "event": "ACM Multimedia 2025",
+      "event": "ACM Multimedia (ACM MM) 2025",
       "date": "2025-10-20",
       "city": "Sydney",
       "country": "Australia",
       "themes": ["AI", "Multimedia", "Vision"],
       "lat": -33.8688,
-      "lng": 151.2093
-    },
-    {
-      "event": "AI Expo LATAM",
-      "date": "2025-07-09",
-      "city": "Mexico City",
-      "country": "Mexico",
-      "themes": ["AI", "Enterprise", "Innovation"],
-      "lat": 19.4326,
-      "lng": -99.1332
+      "lng": 151.2093,
+      "Link": "https://www.acmmm2025.org/"
     },
     {
       "event": "ICAPS 2025",
@@ -241,25 +327,88 @@
       "country": "Czech Republic",
       "themes": ["AI Research", "Planning"],
       "lat": 50.0755,
-      "lng": 14.4378
+      "lng": 14.4378,
+      "Link": "https://icaps25.icaps-conference.org/"
     },
     {
-      "event": "ICANN AI Conference",
-      "date": "2025-04-14",
+      "event": "The Web Conference (WWW) 2025",
+      "date": "2025-04-28",
+      "city": "Sydney",
+      "country": "Australia",
+      "themes": ["Web", "AI", "Data"],
+      "lat": -33.8688,
+      "lng": 151.2093,
+      "Link": "https://www2025.thewebconf.org/"
+    },
+    {
+      "event": "CHI 2025",
+      "date": "2025-04-26",
+      "city": "Yokohama",
+      "country": "Japan",
+      "themes": ["HCI", "AI"],
+      "lat": 35.4437,
+      "lng": 139.6380,
+      "Link": "https://chi2025.acm.org/"
+    },
+    {
+      "event": "ICSE 2025",
+      "date": "2025-04-27",
+      "city": "Ottawa",
+      "country": "Canada",
+      "themes": ["Software Engineering", "AI Tools"],
+      "lat": 45.4215,
+      "lng": -75.6972,
+      "Link": "https://conf.researchr.org/home/icse-2025"
+    },
+    {
+      "event": "AWE USA 2025 (Augmented World Expo)",
+      "date": "2025-06-10",
+      "city": "Long Beach",
+      "country": "USA",
+      "themes": ["XR", "AI", "Spatial Computing"],
+      "lat": 33.7701,
+      "lng": -118.1937,
+      "Link": "https://www.awexr.com/usa-2025"
+    },
+    {
+      "event": "KubeCon + CloudNativeCon Europe 2025",
+      "date": "2025-04-01",
+      "city": "London",
+      "country": "UK",
+      "themes": ["Cloud Native", "AI", "Open Source"],
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "Link": "https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"
+    },
+    {
+      "event": "KubeCon + CloudNativeCon North America 2025",
+      "date": "2025-11-10",
+      "city": "Atlanta",
+      "country": "USA",
+      "themes": ["Cloud Native", "AI", "Open Source"],
+      "lat": 33.7490,
+      "lng": -84.3880,
+      "Link": "https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/"
+    },
+    {
+      "event": "SEMICON West 2025",
+      "date": "2025-10-07",
+      "city": "Phoenix",
+      "country": "USA",
+      "themes": ["Semiconductors", "AI Hardware"],
+      "lat": 33.4484,
+      "lng": -112.0740,
+      "Link": "https://www.semiconwest.org/"
+    },
+    {
+      "event": "OpenAI DevDay 2025",
+      "date": "2025-10-06",
       "city": "San Francisco",
       "country": "USA",
-      "themes": ["AI", "Cloud", "Enterprise"],
+      "themes": ["Developers", "AI"],
       "lat": 37.7749,
-      "lng": -122.4194
-    },
-    {
-      "event": "AI & Robotics Summit",
-      "date": "2025-03-25",
-      "city": "Doha",
-      "country": "Qatar",
-      "themes": ["AI", "Robotics", "Automation"],
-      "lat": 25.276987,
-      "lng": 51.520008
+      "lng": -122.4194,
+      "Link": "https://openai.com/index/announcing-devday-2025/"
     }
   ]
 }
