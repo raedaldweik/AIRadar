@@ -205,6 +205,12 @@
   }
   .mapboxgl-popup-close-button:hover { color: #38bdf8 !important; transform: scale(1.2); }
   .mapboxgl-popup-tip { border-top-color: #28425c !important; }
+
+  #map {
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
 </style>
 </head>
 <body>
@@ -236,13 +242,71 @@ mapboxgl.accessToken = "pk.eyJ1IjoicmFlZGR3ZWlrIiwiYSI6ImNtMTZqZGtpeTBta2cydnM4N
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/standard-satellite",
+  style: "mapbox://styles/raeddweik/cmgg5631a002m01scdl61ee0n",
   zoom: 1.5,
   center: [0, 20],
-  projection: "globe"
+  projection: "globe",
+
+
+  // 🔒 Disable all user zoom interaction
+  scrollZoom: false,
+  boxZoom: false,
+  doubleClickZoom: false,
+  touchZoomRotate: false
 });
 
-map.on("style.load", () => { map.setFog({}); });
+// 🛑 Prevent browser page zooming or scrolling when over the map
+map.getCanvas().addEventListener("wheel", e => e.preventDefault(), { passive: false });
+
+
+map.on("style.load", () => {
+  map.setFog({});
+
+  // --- Hide administrative boundaries (country/state outlines) ---
+  const boundaryLayers = [
+    "admin-0-boundary", "admin-0-boundary-disputed", "admin-0-boundary-bg",
+    "admin-1-boundary", "admin-1-boundary-bg"
+  ];
+  boundaryLayers.forEach(id => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", "none");
+  });
+
+  // --- Hide water labels (oceans, seas, gulfs, rivers, lakes) ---
+  const knownWaterLabelLayers = [
+    "marine-label",
+    "water-label",
+    "waterway-label",
+    "water-name-lakeline",
+    "water-name-ocean",
+    "water-name-sea",
+    "water-name-bay",
+    "water-name-other"
+  ];
+  knownWaterLabelLayers.forEach(id => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", "none");
+  });
+
+  // --- Fallback dynamic search ---
+  const style = map.getStyle();
+  if (style && Array.isArray(style.layers)) {
+    style.layers.forEach(l => {
+      const id = l.id?.toLowerCase() || "";
+      if (
+        l.type === "symbol" &&
+        (id.includes("water") ||
+         id.includes("ocean") ||
+         id.includes("sea") ||
+         id.includes("gulf") ||
+         id.includes("bay") ||
+         id.includes("lake") ||
+         id.includes("marine"))
+      ) {
+        map.setLayoutProperty(l.id, "visibility", "none");
+      }
+    });
+  }
+});
+
 
 // rotation control
 let spinEnabled = true;
@@ -356,7 +420,7 @@ function flyToEvent(e, openPopup = false) {
 
   map.easeTo({
     center: [e.lng, e.lat],
-    zoom: 5,
+    zoom: 4,
     duration: 2000
   });
 
